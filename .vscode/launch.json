@@ -3,22 +3,12 @@
   "configurations": [
     {
       "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
+      "type": "lldb",
       "request": "launch",
-      "args": [],
-      "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/home/hqannouc/Downloads/CPP06/ex00",
-      "program": "/home/hqannouc/Downloads/CPP06/ex00/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
+      "args": ["9999999999999999.23f"],
+      "cwd": "/Users/mac/Documents/_1337/CPP/CPP06/ex00",
+      "program": "/Users/mac/Documents/_1337/CPP/CPP06/ex00/ScalarConverter",
+      "preLaunchTask": "build"
     }
   ]
 }

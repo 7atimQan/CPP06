@@ -23,6 +23,8 @@ bool isFloat(std::string arg) {
 		return false;
 
 	for (size_t i = 0; i < arg.length() - 1; i++) {
+		if (i == 0 && (arg[i] == '-' || arg[i] == '+'))
+			continue ;
 		if (i != 0 && arg[i] == '.' && arg[i + 1] != 'f')
 			continue ;
 		if (!isdigit(arg[i]))
@@ -37,6 +39,8 @@ bool	isDouble(std::string arg) {
 		return false;
 
 	for (size_t i = 0; i < arg.length(); i++) {
+		if (i == 0 && (arg[i] == '-' || arg[i] == '+'))
+			continue ;
 		if (i != 0 && arg[i] == '.' && arg[i + 1] != '\0')
 			continue ;
 		if (!isdigit(arg[i]))
@@ -53,11 +57,15 @@ bool	isChar(std::string arg) {
 	if (!isprint(arg[0]))
 		return false;
 
+	if (isdigit(arg[0]))
+		return false;
 	return true;
 }
 
 bool	isInt(std::string arg) {
 	for (size_t i = 0; i < arg.length(); i++) {
+		if (i == 0 && (arg[i] == '-' || arg[i] == '+'))
+			continue ;
 		if (!isdigit(arg[i]))
 			return false;
 	}

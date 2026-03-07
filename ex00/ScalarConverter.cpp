@@ -19,7 +19,7 @@ void ScalarConverter::convert(std::string arg)
 {
 	TYPE	type;
 	double	d = strtod(arg.c_str(), NULL);
-	
+
 	try {
 		type = getType(arg);
 	}
@@ -33,16 +33,18 @@ void ScalarConverter::convert(std::string arg)
 			break ;
 
 		case CHAR :
-			handleChar(arg[0]);
+			baseChar(arg[0]);
 			break ;
 
 		case INT :
+			baseInt(d);
 			break ;
 
 		case FLOAT :
+			baseFloat(d);
 			break ;
 
-		default :
-			break ;
+		case DOUBLE :
+			baseFloat(d);
 	}	
 } 

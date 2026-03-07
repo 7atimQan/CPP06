@@ -1,8 +1,12 @@
 #pragma once
 
 # include <iostream>
+# include <iomanip>
 # include <stdlib.h>
-# include <climits>
+# include <limits>
+
+# define MIN_FLOAT std::numeric_limits<float>::min()
+# define MAX_FLOAT std::numeric_limits<float>::max()
 
 class ScalarConverter {
 	private :
@@ -21,8 +25,10 @@ bool	isDouble(std::string arg);
 bool	isChar(std::string arg);
 bool	isInt(std::string arg);
 
-void handlePseudo(double d);
-void handleChar(double d);
+void	handlePseudo(double d);
+void	baseChar(double d);
+void	baseInt(double d);
+void	baseFloat(double d);
 
 typedef enum e_type {
 	CHAR,
