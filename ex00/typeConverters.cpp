@@ -1,4 +1,5 @@
 #include "ScalarConverter.hpp"
+#include <stdio.h>
 
 void	handlePseudo(double d) {
 	std::cout << "char : impossible" << std::endl;
@@ -17,19 +18,20 @@ void	baseChar(double d) {
 	i = static_cast<int>(d);
 	f = static_cast<float>(d);
 
-	std::cout << "char : " << c << std::endl;
+	std::cout << "char : " << "'" << c << "'" << std::endl;
 	std::cout << "int : " << i << std::endl;
 	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 	std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
 }
 
 void	convertChar(double d) {
-	if (d >= CHAR_MIN && d <= CHAR_MAX) {
-		char c = static_cast<char>(d);
+	if (d >= CHAR_MIN && d <= UCHAR_MAX) {
+		char c = static_cast<unsigned char>(d);
+
 		if (!isprint(c))
 			std::cout << "char : Non displayable" << std::endl;
 		else
-			std::cout << "char : " << c << std::endl;
+			std::cout << "char : " << "'" << c << "'" << std::endl;
 	}
 	else
 		std::cout << "char : impossible" << std::endl;

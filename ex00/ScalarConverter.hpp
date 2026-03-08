@@ -3,7 +3,7 @@
 # include <iostream>
 # include <iomanip>
 # include <stdlib.h>
-# include <limits>
+# include <climits>
 
 # define MIN_FLOAT std::numeric_limits<float>::min()
 # define MAX_FLOAT std::numeric_limits<float>::max()
