@@ -7,10 +7,10 @@
 # include <limits>
 # include <cmath>
 
-# define MIN_FLOAT std::numeric_limits<float>::lowest()
+# define MIN_FLOAT (-std::numeric_limits<float>::max())
 # define MAX_FLOAT std::numeric_limits<float>::max()
+# define DBL_MIN (-std::numeric_limits<double>::max())
 # define DBL_MAX std::numeric_limits<double>::max()
-# define DBL_MIN std::numeric_limits<double>::lowest()
 
 class ScalarConverter {
 	private :
