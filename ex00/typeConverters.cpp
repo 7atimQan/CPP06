@@ -25,7 +25,7 @@ void	baseChar(double d) {
 }
 
 void	convertChar(double d) {
-	if (d >= CHAR_MIN && d <= UCHAR_MAX) {
+	if (d >= CHAR_MIN && d <= CHAR_MAX) {
 		char c = static_cast<unsigned char>(d);
 
 		if (!isprint(c))
@@ -67,5 +67,23 @@ void	baseFloat(double d) {
 	std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
 }
 
+void	convertFloat(double d) {
+	if (d >= MIN_FLOAT && d <= MAX_FLOAT) {
+		float f = static_cast<float>(d);
+		std::cout << "float : " << std::fixed << std::setprecision(1) << f << 'f' << std::endl;
+	}
+	else
+		std::cout << "float : impossible" << std::endl;
+}
+
+void	baseDouble(double d) {
+	convertChar(d);
+	convertInt(d);
+	convertFloat(d);
+	if (d >= DBL_MIN && d <= DBL_MAX)
+		std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
+	else
+		std::cout << "double : impossible" << std::endl;	
+}
 // pour faire une projecion dans une collection (select) : db.mycollection.find(arg1[,arg2])
 // arg1 est un objet JSON qui permet de faire une restrction (where)

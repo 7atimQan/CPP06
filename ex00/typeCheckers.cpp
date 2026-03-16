@@ -30,6 +30,9 @@ bool isFloat(std::string arg) {
 		if (!isdigit(arg[i]))
 			return false;
 	}
+	double d = strtod(arg.c_str(), NULL);
+	if (d < MIN_FLOAT || d > MAX_FLOAT)
+		return false;
 
 	return true;
 }
@@ -46,7 +49,6 @@ bool	isDouble(std::string arg) {
 		if (!isdigit(arg[i]))
 			return false;
 	}
-
 	return true;
 }
 

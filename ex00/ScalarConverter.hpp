@@ -4,9 +4,13 @@
 # include <iomanip>
 # include <stdlib.h>
 # include <climits>
+# include <limits>
+# include <cmath>
 
-# define MIN_FLOAT std::numeric_limits<float>::min()
+# define MIN_FLOAT std::numeric_limits<float>::lowest()
 # define MAX_FLOAT std::numeric_limits<float>::max()
+# define DBL_MAX std::numeric_limits<double>::max()
+# define DBL_MIN std::numeric_limits<double>::lowest()
 
 class ScalarConverter {
 	private :
@@ -29,6 +33,7 @@ void	handlePseudo(double d);
 void	baseChar(double d);
 void	baseInt(double d);
 void	baseFloat(double d);
+void	baseDouble(double d);
 
 typedef enum e_type {
 	CHAR,

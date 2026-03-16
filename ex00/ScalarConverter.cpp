@@ -45,6 +45,6 @@ void ScalarConverter::convert(std::string arg)
 			break ;
 
 		case DOUBLE :
-			baseFloat(d);
+			baseDouble(d);
 	}	
 } 
